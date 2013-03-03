@@ -40,7 +40,7 @@
  */
 
 /* Initialize kernel GPU context and state map */
-static int initialize_gpu_context(gcoCONTEXT vctx)
+static int initialize_gpu_context(gckCONTEXT vctx)
 {
     /* First build context state map from compressed representation */
     size_t contextbuf_addr_size = sizeof(contextbuf_addr)/sizeof(address_index_t);

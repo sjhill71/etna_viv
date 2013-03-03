@@ -1,4 +1,4 @@
-GCABI ?= v2
+GCABI ?= v4
 PLATFORM_GL_LIBS ?= -lEGL_VIVANTE -lGLESv2_VIVANTE -L$(TOP)/lib/egl -Xlinker --allow-shlib-undefined
 
 CC = $(GCCPREFIX)gcc

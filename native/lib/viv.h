@@ -28,7 +28,8 @@
 #include "gc_hal_base.h"
 #include "gc_hal.h"
 #include "gc_hal_driver.h"
-#include "gc_hal_user_context.h"
+#include "gc_hal_kernel_context.h"
+#include "gc_hal_kernel_buffer.h"
 #include "gc_hal_types.h"
 #include <stdint.h>
 #include <stdlib.h>
@@ -75,7 +76,7 @@ int viv_lock_vidmem(gcuVIDMEM_NODE_PTR node, viv_addr_t *physical, void **logica
 
 /** Commit GPU command buffer and context.
  */
-int viv_commit(gcoCMDBUF commandBuffer, gcoCONTEXT contextBuffer);
+int viv_commit(gcoCMDBUF commandBuffer, gckCONTEXT contextBuffer);
 
 /**  Unlock (unmap) video memory node from GPU and CPU memory.
  */

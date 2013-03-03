@@ -174,7 +174,7 @@ void log_interface_in(flightrec_event_t evctx, gcsHAL_INTERFACE *id)
         fdr_event_add_oneshot_range(evctx, id->u.Commit.commandBuffer, sizeof(struct _gcoCMDBUF));
         //fdr_event_add_oneshot_range(evctx, id->u.Commit.commandBuffer->logical, id->u.Commit.commandBuffer->offset);
 #ifndef GCABI_HAS_STATE_DELTAS
-        fdr_event_add_oneshot_range(evctx, id->u.Commit.contextBuffer, sizeof(struct _gcoCONTEXT));
+        fdr_event_add_oneshot_range(evctx, id->u.Commit.contextBuffer, sizeof(struct _gckCONTEXT));
         if(id->u.Commit.contextBuffer->map) /* state map */
             fdr_event_add_oneshot_range(evctx, id->u.Commit.contextBuffer->map, id->u.Commit.contextBuffer->stateCount*4);
         if(id->u.Commit.contextBuffer->buffer) /* context command temp buffer */

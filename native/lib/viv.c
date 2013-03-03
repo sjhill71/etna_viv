@@ -214,15 +214,15 @@ int viv_unlock_vidmem(gcuVIDMEM_NODE_PTR node, gceSURF_TYPE type, int async)
 
 /* TODO free contiguous memory and video memory */
 
-int viv_commit(gcoCMDBUF commandBuffer, gcoCONTEXT contextBuffer)
+int viv_commit(gcoCMDBUF commandBuffer, gckCONTEXT contextBuffer)
 {
     gcsHAL_INTERFACE id = {
         .command = gcvHAL_COMMIT,
+	.handle = viv_process,
         .u = {
             .Commit = {
                 .commandBuffer = commandBuffer,
-                .contextBuffer = contextBuffer,
-                .process = viv_process
+                .context = contextBuffer,
             }
         }
     };

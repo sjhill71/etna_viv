@@ -28,7 +28,9 @@
 #include "gc_hal_base.h"
 #include "gc_hal.h"
 #include "gc_hal_driver.h"
-#include "gc_hal_user_context.h"
+#include "gc_hal_kernel_buffer.h"
+#include "gc_hal_kernel_context.h"
+#include "gc_hal_enum.h"
 #include "gc_hal_types.h"
 
 #include "etna/common.xml.h"
@@ -98,7 +100,7 @@ typedef struct _etna_ctx {
     /* Structures for kernel */
     struct _gcoCMDBUF cmdbuf[NUM_COMMAND_BUFFERS];
     int cmdbuf_sig[NUM_COMMAND_BUFFERS]; /* sync signals for command buffers */
-    struct _gcoCONTEXT ctx;
+    struct _gckCONTEXT ctx;
 } etna_ctx;
 
 /** Convenience macros for command buffer building, remember to reserve space first before using them */
