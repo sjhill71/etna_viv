@@ -5,7 +5,7 @@ include $(TOP)/Makefile.inc
 COMMON_FLAGS = -I$(TOP)/lib -I$(TOP)/include_$(GCABI) -g -std=c99 -fPIC  -I../resources -I ../include
 CFLAGS += $(COMMON_FLAGS) 
 CXXFLAGS += $(COMMON_FLAGS) 
-LDFLAGS += -lm
+LDFLAGS += -lm -lpthread
 
 TARGETS = cube cube_companion cube_etna ps_sandbox_etna etna_test reset viv_info cube_etna2
 COMPANION_OBJS = ../resources/companion_array.o ../resources/companion_mesh.o ../resources/companion_texture.o
